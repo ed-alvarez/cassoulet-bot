@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  cassoulet:
+    container_name: cassoulet
+    network_mode: host
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/usr/src
+  mongodb:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: cassoulet
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    volumes:
+      - /data/db:/data/db

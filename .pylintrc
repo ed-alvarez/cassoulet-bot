@@ -1,0 +1,16 @@
+[MASTER]
+init-hook="import sys; sys.path.append('./cassoulet')"
+
+disable=
+    C0114,
+    C0115,
+    C0116,
+    R0903,
+    W0703,
+    W1401
+
+[MESSAGES CONTROL]
+disable=
+    assigning-non-slot,
+    no-self-use,
+    dangerous-default-value
